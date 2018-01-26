@@ -8,7 +8,9 @@ A sample lottery application that uses Ethereum as currency
 npm install --save solc
 npm install --save mocha ganache-cli web3@1.0.0-beta.26
 ```
-#### GitHub Error installing web3
+#### Skip this if you do not see any error
+If you are seeing any error relatex to Syntax issue. Most likely cause is you are running on the older version of node.
+###### GitHub Error installing web3
 If you get following error where it can not connect to github.
 ```
 1944 silly fetchPackageMetaData Error: Command failed: git clone --template=/Users/jsarl/.npm/_git-remotes/_templates --mirror git://github.com/frozeman/WebSocket-Node.git /Users/jsarl/.npm/_git-remotes/git-github-com-frozeman-WebSocket-Node-git-browserifyCompatible-6c68775e
@@ -23,7 +25,8 @@ Typing following command fixed this issue.
 ```script
 git config --global url.https://github.com/.insteadOf git://github.com/
 ```
-#### Python Error while installing web3
+
+###### Python Error while installing web3
 If you see following kind of error
 ```
 gyp ERR! configure error 
@@ -44,3 +47,14 @@ If your project is setup correctly, you can run the tests. If all tests pass, yo
 ```script
 npm run test
 ```
+## Deploy Contract on actual Rinkby
+You can deploy this contract on the real Rinkby network. For that you need to install truffe-hdwallet-provider in the working directory first.
+
+```script
+npm install --save truffle-hdwallet-provider
+```
+Now run the deploy script. 
+```script
+node deploy.js
+```
+Your contract is now actually deployed on the Rinkby network.
